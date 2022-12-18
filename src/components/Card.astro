@@ -1,21 +1,89 @@
 ---
-export interface Props {
-  title: string
-  body: string
-  href: string
-}
+import env from '../lib/config.env'
 
-const { href, title, body } = Astro.props
+const { OPENAI_API_KEY } = env
+
+const generateAdvice = async function generateAdvice() {
+  const adviceFor = [
+    'sad',
+    'angry',
+    'bored',
+    'lonely',
+    'worried',
+    'unhappy',
+    'anxious',
+    'stressed',
+    'depressed',
+    'demotivated'
+  ]
+
+  const index = Math.floor(Math.random() * adviceFor.length)
+
+  const response = await fetch('https://api.openai.com/v1/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${OPENAI_API_KEY}`
+    },
+    body: JSON.stringify({
+      model: 'text-davinci-003',
+      prompt: `Generate advice for someone feeling ${adviceFor[index]}}`,
+      max_tokens: 128,
+      temperature: 0.5,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0
+    })
+  })
+
+  const data = await response.json()
+  const advice = data.choices[0].text
+    .split('\n')
+    .filter((line: string) => line !== '')
+    .map((line: string) => line.replace(/^[0-9]+\. /, ''))
+    .splice(0, 1)
+    .join('')
+
+  return advice
+}
 ---
 
-<li class='link-card'>
-  <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
-  </a>
-</li>
+<div
+  class='p:24 bg:grayish-blue-dark m:0|16 text:center r:16 h:320 flex flex:col gap:8 gap:10@xs jc:center max-w:xs ai:center rel'
+>
+  <div>
+    <h3 id='adviceno' class='uppercase ls:6 color:neon-green f:10 font:regular'>
+    </h3>
+  </div>
+  <div class='color:light-cyan text:center max-w:3xs m:32|0'>
+    <p id='advice' class='font:extrabold f:20'></p>
+  </div>
+  <div>
+    <img src='/pattern-divider-mobile.svg' alt='divider' />
+  </div>
+  <div class='abs bottom:-30'>
+    <get-advice>
+      <button
+        id='btn'
+        class='r:100% w:60 h:60 bg:neon-green m:0|auto bottom:0 flex ai:center jc:center shadow:3|3|30|neon-green:hover'
+        type='button'
+      >
+        <img src='/icon-dice.svg' alt='dice' />
+      </button>
+    </get-advice>
+  </div>
+</div>
+
+<script>
+  const button = document.querySelector('#btn')
+  if (!button) throw new Error('Button not found')
+
+  button.addEventListener('click', async () => {
+    const advice = document.querySelector('#advice')
+    const adviceNo = document.querySelector('#adviceno')
+
+    if (!advice || !adviceNo) throw new Error('Element not found')
+
+    adviceNo.innerHTML = `Advice #${Math.floor(Math.random() * 999)}`
+  })
+</script>

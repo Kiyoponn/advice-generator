@@ -1,9 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title='Welcome to Astro.'>
-  <main>
-    <h1 class='font:50 m:50 color:light-cyan text:center'>Hello World</h1>
+<Layout title='Wise Advice'>
+  <main class="h:full w:full flex jc:center ai:center">
+    <Card />
   </main>
 </Layout>
