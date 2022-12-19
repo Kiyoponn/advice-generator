@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Oval } from 'react-loading-icons'
+import { useState } from 'react';
+import { Oval } from 'react-loading-icons';
 
 export default function Button() {
   const [loading, setLoading] = useState(false)
@@ -24,7 +24,7 @@ export default function Button() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${import.meta.env.PUBLIC_OPEN_API_KEY}`
+        Authorization: `Bearer ${import.meta.env.PUBLIC_OPENAI_API_KEY}`
       },
       body: JSON.stringify({
         model: 'text-davinci-003',
@@ -65,7 +65,7 @@ export default function Button() {
   return (
     <button
       onClick={(e) => getAdvice(e)}
-      className='r:100% w:60 h:60 bg:neon-green m:0|auto bottom:0 flex ai:center jc:center shadow:3|3|30|neon-green:hover'
+      className='r:100% w:60 h:60 bg:neon-green m:0|auto bottom:0 flex ai:center jc:center shadow:3|3|30|neon-green:hover shadow:none:disabled cursor:progress:disabled'
       type='submit'
       disabled={loading}
     >
