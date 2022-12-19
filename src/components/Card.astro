@@ -1,89 +1,52 @@
 ---
-import env from '../lib/config.env'
-
-const { OPENAI_API_KEY } = env
-
-const generateAdvice = async function generateAdvice() {
-  const adviceFor = [
-    'sad',
-    'angry',
-    'bored',
-    'lonely',
-    'worried',
-    'unhappy',
-    'anxious',
-    'stressed',
-    'depressed',
-    'demotivated'
-  ]
-
-  const index = Math.floor(Math.random() * adviceFor.length)
-
-  const response = await fetch('https://api.openai.com/v1/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${OPENAI_API_KEY}`
-    },
-    body: JSON.stringify({
-      model: 'text-davinci-003',
-      prompt: `Generate advice for someone feeling ${adviceFor[index]}}`,
-      max_tokens: 128,
-      temperature: 0.5,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0
-    })
-  })
-
-  const data = await response.json()
-  const advice = data.choices[0].text
-    .split('\n')
-    .filter((line: string) => line !== '')
-    .map((line: string) => line.replace(/^[0-9]+\. /, ''))
-    .splice(0, 1)
-    .join('')
-
-  return advice
-}
+import Button from '../components/Button'
 ---
 
 <div
-  class='p:24 bg:grayish-blue-dark m:0|16 text:center r:16 h:320 flex flex:col gap:8 gap:10@xs jc:center max-w:xs ai:center rel'
+  class='p:24 bg:grayish-blue-dark m:0|16 m:0@xs text:center r:16 flex flex:col jc:space-evenly min-h:320 max-h:max ai:center rel max-w:xs'
 >
   <div>
     <h3 id='adviceno' class='uppercase ls:6 color:neon-green f:10 font:regular'>
+      Advice #999
     </h3>
   </div>
-  <div class='color:light-cyan text:center max-w:3xs m:32|0'>
-    <p id='advice' class='font:extrabold f:20'></p>
+  <div class='color:light-cyan text:center m:0|28@2xs'>
+    <p id='advice' class='font:extrabold f:20'>
+      "It's easy to sit up and take notice, what's difficult is getting up and
+      taking action."
+    </p>
   </div>
   <div>
-    <img src='/pattern-divider-mobile.svg' alt='divider' />
+    <img
+      id='divider'
+      src='/pattern-divider-desktop.svg'
+      class='m:0|auto'
+      alt='divider'
+    />
   </div>
   <div class='abs bottom:-30'>
-    <get-advice>
-      <button
-        id='btn'
-        class='r:100% w:60 h:60 bg:neon-green m:0|auto bottom:0 flex ai:center jc:center shadow:3|3|30|neon-green:hover'
-        type='button'
-      >
-        <img src='/icon-dice.svg' alt='dice' />
-      </button>
-    </get-advice>
+    <Button client:load />
   </div>
 </div>
 
 <script>
-  const button = document.querySelector('#btn')
-  if (!button) throw new Error('Button not found')
+  const image = document.getElementById('divider') as HTMLImageElement
 
-  button.addEventListener('click', async () => {
-    const advice = document.querySelector('#advice')
-    const adviceNo = document.querySelector('#adviceno')
+  const windowWidth = window.innerWidth
 
-    if (!advice || !adviceNo) throw new Error('Element not found')
+  if (windowWidth < 600) {
+    image.src = '/pattern-divider-mobile.svg'
+  } else {
+    image.src = '/pattern-divider-desktop.svg'
+  }
 
-    adviceNo.innerHTML = `Advice #${Math.floor(Math.random() * 999)}`
+  window.addEventListener('resize', () => {
+    const windowWidth = window.innerWidth
+
+    if (windowWidth < 600) {
+      image.src = '/pattern-divider-mobile.svg'
+    } else {
+      image.src = '/pattern-divider-desktop.svg'
+    }
   })
 </script>
