@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Oval } from 'react-loading-icons';
+import { useState } from 'react'
+import { Oval } from 'react-loading-icons'
 
-export default function Button() {
+export default function Button({ API_KEY }: { API_KEY: string }) {
   const [loading, setLoading] = useState(false)
 
   const generateAdvice = async () => {
@@ -24,7 +24,7 @@ export default function Button() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${import.meta.env.PUBLIC_OPENAI_API_KEY}`
+        Authorization: `Bearer ${API_KEY}` // undefined
       },
       body: JSON.stringify({
         model: 'text-davinci-003',

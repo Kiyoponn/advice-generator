@@ -1,5 +1,7 @@
 ---
 import Button from '../components/Button'
+
+export const API_KEY = import.meta.env.OPENAI_API_KEY
 ---
 
 <div
@@ -25,7 +27,7 @@ import Button from '../components/Button'
     />
   </div>
   <div class='abs bottom:-30'>
-    <Button client:load />
+    <Button API_KEY={API_KEY} client:load />
   </div>
 </div>
 
