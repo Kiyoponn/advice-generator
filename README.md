@@ -8,6 +8,10 @@ A simple advice generator app with:
   - Master CSS's Virtual CSS engine allows you to style without the complexities of existing approaches — You can style inside HTML with enhanced syntax.
 - [astrojs-react](https://docs.astro.build/en/guides/integrations-guide/react)
   - This Astro integration enables server-side rendering and client-side hydration for your React components.
+- [openai-api](https://openai.com/api/)
+  - The OpenAI API is a set of language processing services that enable developers to build applications that can understand, generate, and summarize human-like text.
+- [react-loading-icons](https://github.com/dkress59/react-loading-icons)
+  - React implementation of the [SVG Loaders library](https://github.com/SamHerbert/SVG-Loaders) by Sam Herbert.
 - [vercel](https://vercel.com)
   - Vercel is a cloud platform for hosting websites and applications, with features such as automatic scaling, global CDN, and integrations with Git repositories.
 
