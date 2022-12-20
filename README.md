@@ -7,7 +7,7 @@ A simple advice generator app with:
   * Astro is a web framework for building fast, content-focused websites with a server-first API design and support for various UI libraries.
 * [master-css](https://css.master.co)
   * Master CSS's Virtual CSS engine allows you to style without the complexities of existing approaches — You can style inside HTML with enhanced syntax.
-* [astrojs/react](https://docs.astro.build/en/guides/integrations-guide/react)
+* [astrojs-react](https://docs.astro.build/en/guides/integrations-guide/react)
   * This Astro integration enables server-side rendering and client-side hydration for your React components.
 * [vercel](https://vercel.com)
   * Vercel is a cloud platform for hosting websites and applications, with features such as automatic scaling, global CDN, and integrations with Git repositories.
