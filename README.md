@@ -1,13 +1,17 @@
-# Welcome to [Astro](https://astro.build)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+# Advice Generator
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+A simple advice generator app with:
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-## 🚀 Project Structure
+* [astrojs](https://astro.build)
+  * Astro is a web framework for building fast, content-focused websites with a server-first API design and support for various UI libraries.
+* [master-css](https://css.master.co)
+  * Master CSS's Virtual CSS engine allows you to style without the complexities of existing approaches — You can style inside HTML with enhanced syntax.
+* [astrojs/react](https://docs.astro.build/en/guides/integrations-guide/react)
+  * This Astro integration enables server-side rendering and client-side hydration for your React components.
+* [vercel](https://vercel.com)
+  * Vercel is a cloud platform for hosting websites and applications, with features such as automatic scaling, global CDN, and integrations with Git repositories.
+### 📁 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -24,26 +28,29 @@ Inside of your Astro project, you'll see the following folders and files:
 │       └── index.astro
 └── package.json
 ```
+### ✅ Run Locally
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Clone the project
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+  git clone https://github.com/Kiyoponn/advice-generator.git
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+Go to the project directory
 
-## 🧞 Commands
+```bash
+  cd my-project
+```
 
-All commands are run from the root of the project, from a terminal:
+Install dependencies
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
+```bash
+  yarn
+```
 
-## 👀 Want to learn more?
+Start the server
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+  yarn run start
+```
+
