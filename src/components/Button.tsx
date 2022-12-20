@@ -24,11 +24,11 @@ export default function Button({ API_KEY }: { API_KEY: string }) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${API_KEY}` // undefined
+        Authorization: `Bearer ${API_KEY}`
       },
       body: JSON.stringify({
         model: 'text-davinci-003',
-        prompt: `Generate advice for someone feeling ${adviceFor[index]}}`,
+        prompt: `Generate advice for someone feeling ${adviceFor[index]} in 16 words or less.`,
         max_tokens: 128,
         temperature: 0.5,
         top_p: 1,
