@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
-import vercel from '@astrojs/vercel/edge'
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 import react from '@astrojs/react'
@@ -9,8 +9,6 @@ import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: vercel({
-    includeFiles: ['./src/pages/api/advice.json.ts'],
-  }),
+  adapter: vercel(),
   integrations: [react()],
 })

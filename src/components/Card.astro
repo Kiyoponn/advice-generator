@@ -1,5 +1,5 @@
 ---
-import Button from '../components/Button'
+import Button from '../components/Button';
 ---
 
 <div
@@ -31,8 +31,12 @@ import Button from '../components/Button'
 
   if (windowWidth < 500) {
     image.src = '/pattern-divider-mobile.svg'
+    image.width = 295
+    image.height = 16
   } else {
     image.src = '/pattern-divider-desktop.svg'
+    image.width = 444
+    image.height = 16
   }
 
   window.addEventListener('resize', () => {

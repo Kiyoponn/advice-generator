@@ -63,7 +63,7 @@ export default function Button() {
       {loading ? (
         <Oval height={24} width={24} stroke={'#202733'} />
       ) : (
-        <img src='/icon-dice.svg' alt='dice' />
+        <img width='24' height='24' src='/icon-dice.svg' alt='dice' />
       )}
     </button>
   )
