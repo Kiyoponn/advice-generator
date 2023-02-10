@@ -1,4 +1,4 @@
-# Password Generator
+# Advice Generator
 
 A simple advice generator app with:
 
