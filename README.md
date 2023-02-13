@@ -17,7 +17,7 @@ A simple advice generator app with:
 
 ## 🎨 Design
 
-Desing is taken from frontendmentor's [advice generator app](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
+Desing source frontendmentor's [advice generator app](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
 
 ## 📁 Folder Structure
 
