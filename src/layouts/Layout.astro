@@ -1,4 +1,6 @@
 ---
+export const prerender = true
+
 export interface Props {
   title: string
 }
@@ -21,8 +23,8 @@ const { title } = Astro.props
   </body>
   <script>
     import MasterCSS from '@master/css'
-    import config from '../../master.css'
-    export const css = new MasterCSS({ config })
+    import Config from '../../master.css'
+    export const css = new MasterCSS(Config)
   </script>
 </html>
 <style is:global>
