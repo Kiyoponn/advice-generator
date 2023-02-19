@@ -1,7 +1,5 @@
 ---
-export const prerender = true
-
-import Button from './Button'
+import Button from './Button';
 ---
 
 <div
@@ -13,22 +11,17 @@ import Button from './Button'
     </h3>
   </div>
   <div class='color:light-cyan text:center m:0|28@2xs'>
-    <p id='advice' class='font:extrabold f:28'>
-      <span class='text:light-cyan opacity:.75'>
+    <p id='advice' class='f:extrabold f:28'>
+      <span class='f:bold f:26 opacity:.75'>
         Click on the button to generate the advice.
       </span>
     </p>
   </div>
-  <div>
-    <picture>
-      <source media='(max-width: 499px)' srcset='/pattern-divider-mobile.svg' />
-      <source
-        media='(min-width: 500px)'
-        srcset='/pattern-divider-desktop.svg'
-      />
-      <img src='/pattern-divider-desktop.svg' alt='Divider' />
-    </picture>
-  </div>
+  <picture>
+    <source media='(max-width: 499px)' srcset='/pattern-divider-mobile.svg' />
+    <source media='(min-width: 500px)' srcset='/pattern-divider-desktop.svg' />
+    <img src='/pattern-divider-desktop.svg' alt='Divider' />
+  </picture>
   <div class='abs bottom:-30'>
     <Button client:idle />
   </div>
