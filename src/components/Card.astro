@@ -1,5 +1,6 @@
 ---
-import Button from '../components/Button';
+import Button from './Button';
+import Divider from './Divider';
 ---
 
 <div
@@ -7,45 +8,20 @@ import Button from '../components/Button';
 >
   <div>
     <h3 id='adviceno' class='uppercase ls:6 color:neon-green f:14 font:regular'>
-      Advice #999
+      Advice #000
     </h3>
   </div>
   <div class='color:light-cyan text:center m:0|28@2xs'>
     <p id='advice' class='font:extrabold f:28'>
-      "It's easy to sit up and take notice, what's difficult is getting up and
-      taking action."
+      <span class='text:light-cyan opacity:.75'>
+        Click on the button to generate the advice.
+      </span>
     </p>
   </div>
   <div>
-    <img id='divider' src='' class='m:0|auto' alt='divider' />
+    <Divider client:only />
   </div>
   <div class='abs bottom:-30'>
-    <Button client:load />
+    <Button client:idle />
   </div>
 </div>
-
-<script>
-  const image = document.getElementById('divider') as HTMLImageElement
-
-  const windowWidth = window.innerWidth
-
-  if (windowWidth < 500) {
-    image.src = '/pattern-divider-mobile.svg'
-    image.width = 295
-    image.height = 16
-  } else {
-    image.src = '/pattern-divider-desktop.svg'
-    image.width = 444
-    image.height = 16
-  }
-
-  window.addEventListener('resize', () => {
-    const windowWidth = window.innerWidth
-
-    if (windowWidth < 500) {
-      image.src = '/pattern-divider-mobile.svg'
-    } else {
-      image.src = '/pattern-divider-desktop.svg'
-    }
-  })
-</script>

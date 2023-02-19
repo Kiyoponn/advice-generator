@@ -45,7 +45,10 @@ export default function Button() {
     // TODO: Try streaming with edge functions
 
     document.getElementById('advice')!.innerHTML = `"${advice}"`
-    const adviceno = Math.floor(Math.random() * 998)
+    let adviceno = (Math.floor(Math.random() * 999) + 1)
+      .toString()
+      .padStart(3, '0')
+
     document.getElementById(
       'adviceno'
     )!.innerHTML = `Advice #${adviceno.toString()}`
