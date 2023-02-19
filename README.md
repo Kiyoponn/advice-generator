@@ -1,4 +1,4 @@
-# Password Generator
+# Advice Generator
 
 A simple advice generator app with:
 
@@ -17,7 +17,7 @@ A simple advice generator app with:
 
 ## 🎨 Design
 
-Desing is taken from frontendmentor's [advice generator app](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
+Source: frontendmentor's [advice generator app](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
 
 ## 📁 Folder Structure
 
@@ -55,7 +55,7 @@ Install dependencies
   yarn
 ```
 
-Start the server
+Start dev server
 
 ```bash
   yarn dev
