@@ -1,6 +1,7 @@
 ---
-import Button from './Button';
-import Divider from './Divider';
+export const prerender = true
+
+import Button from './Button'
 ---
 
 <div
@@ -19,7 +20,14 @@ import Divider from './Divider';
     </p>
   </div>
   <div>
-    <Divider client:only />
+    <picture>
+      <source media='(max-width: 499px)' srcset='/pattern-divider-mobile.svg' />
+      <source
+        media='(min-width: 500px)'
+        srcset='/pattern-divider-desktop.svg'
+      />
+      <img src='/pattern-divider-desktop.svg' alt='Divider' />
+    </picture>
   </div>
   <div class='abs bottom:-30'>
     <Button client:idle />
