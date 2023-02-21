@@ -52,11 +52,11 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  yarn
+  pnpm install
 ```
 
 Start dev server
 
 ```bash
-  yarn dev
+  pnpm dev
 ```
