@@ -3,12 +3,20 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write --ignore-path .gitignore \"**/*.{js,ts,tsx,md}\""
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",

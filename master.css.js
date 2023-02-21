@@ -4,8 +4,8 @@ export default {
     'neon-green': '#52ffa8',
     'grayish-blue': {
       light: '#4e5d73',
-      dark: '#323a49'
+      dark: '#323a49',
     },
-    'dark-blue': '#1f2632'
-  }
+    'dark-blue': '#1f2632',
+  },
 }
