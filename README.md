@@ -24,14 +24,11 @@ Source: frontendmentor's [advice generator app](https://www.frontendmentor.io/ch
 ```tree
 /
 ├── public/
-│   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
 │   ├── layouts/
-│   │   └── Layout.astro
 │   └── pages/
-│       └── index.astro
+│       └── api/
 └── package.json
 ```
 
