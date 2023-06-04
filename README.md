@@ -52,3 +52,5 @@ Start dev server
 ```bash
   pnpm dev
 ```
+
+> NOTE: Not working becuase `OpenAI API` quota is expired. 
