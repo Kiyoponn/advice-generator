@@ -1,5 +1,7 @@
 # **Advice Generator**
 
+> ⚠️ Not working becuase `OpenAI API` quota is expired. 
+
 A simple advice generator app using [Astro](https://astro.build) with [React](https://beta.reactjs.org) components.
 
 ## ⚙️ Utilities
@@ -52,5 +54,3 @@ Start dev server
 ```bash
   pnpm dev
 ```
-
-> NOTE: Not working becuase `OpenAI API` quota is expired. 
