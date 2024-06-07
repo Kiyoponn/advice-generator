@@ -1,7 +1,5 @@
 # **Advice Generator**
 
-> ⚠️ NOT working because **OpenAI API** free quota expired.
-
 A simple advice generator app using [Astro](https://astro.build) with [React](https://beta.reactjs.org) components.
 
 ## ⚙️ Utilities
